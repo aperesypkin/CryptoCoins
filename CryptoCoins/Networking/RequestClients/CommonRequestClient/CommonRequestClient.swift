@@ -16,7 +16,9 @@ class CommonRequestClient: IRequestClient {
         self.requestBilder = requestBilder
     }
     
-    func send<Parser>(request: IRequest, parser: Parser, completionHandler: @escaping (Result<Parser.Model>) -> Void) where Parser : IParser {
+    func send<Parser: IParser>(request: IRequest,
+                               parser: Parser,
+                               completionHandler: @escaping (Result<Parser.Model>) -> Void) {
         guard let urlRequest = requestBilder.buildURLRequest(from: request) else {
             completionHandler(.error("url string can't be parsed to URL"))
             return
