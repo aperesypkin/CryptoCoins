@@ -12,9 +12,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        title = "Test"
+        
+        let view = UIView(frame: .init(x: 100, y: 100, width: 100, height: 100))
+        view.backgroundColor = .red
+        self.view.addSubview(view)
     }
 
-
 }
-
