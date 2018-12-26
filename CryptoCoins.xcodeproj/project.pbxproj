@@ -37,6 +37,10 @@
 		5C60C5C621C074B90031E342 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C60C5C421C074B90031E342 /* Environment.swift */; };
 		5C60C5D721C07D720031E342 /* IRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C60C5D621C07D720031E342 /* IRequest.swift */; };
 		5C60C5D821C07FB00031E342 /* IRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C60C5D621C07D720031E342 /* IRequest.swift */; };
+		5CAC208221D40E4A00517A98 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5CAC208521D40E4A00517A98 /* Localizable.strings */; };
+		5CAC208321D40E4A00517A98 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5CAC208521D40E4A00517A98 /* Localizable.strings */; };
+		5CAC208821D40EBD00517A98 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAC208721D40EBD00517A98 /* String+Localized.swift */; };
+		5CAC208921D40EBD00517A98 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAC208721D40EBD00517A98 /* String+Localized.swift */; };
 		7D158844FCADFEA23699AF92 /* Pods_Debug.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D5ADA77221571A8A63CA44 /* Pods_Debug.framework */; };
 		8510059BD0179C141259BFC8 /* Pods_Production.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63E8A5B4806223228D714532 /* Pods_Production.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +65,8 @@
 		5C60C5C221C073430031E342 /* Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Debug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C60C5C421C074B90031E342 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		5C60C5D621C07D720031E342 /* IRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRequest.swift; sourceTree = "<group>"; };
+		5CAC208621D40E5400517A98 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5CAC208721D40EBD00517A98 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		63E8A5B4806223228D714532 /* Pods_Production.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Production.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		816C52D839712334AFD80E3B /* Pods-Debug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Debug.release.xcconfig"; path = "Pods/Target Support Files/Pods-Debug/Pods-Debug.release.xcconfig"; sourceTree = "<group>"; };
 		C2933F659A5ED0D8F0EC3E49 /* Pods-Debug.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Debug.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Debug/Pods-Debug.debug.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +142,8 @@
 				5C21074321C06B2000E86C5B /* ViewController.swift */,
 				5C60C5C421C074B90031E342 /* Environment.swift */,
 				5C3E468021CE660A00FEC854 /* Result.swift */,
+				5CAC208721D40EBD00517A98 /* String+Localized.swift */,
+				5CAC208521D40E4A00517A98 /* Localizable.strings */,
 				5C3E466F21CE62CE00FEC854 /* Networking */,
 				5C21074821C06B2200E86C5B /* Assets.xcassets */,
 				5C21074A21C06B2200E86C5B /* LaunchScreen.storyboard */,
@@ -305,11 +313,11 @@
 			};
 			buildConfigurationList = 5C21073921C06B2000E86C5B /* Build configuration list for PBXProject "CryptoCoins" */;
 			compatibilityVersion = "Xcode 9.3";
-			developmentRegion = en;
+			developmentRegion = ru;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				ru,
 			);
 			mainGroup = 5C21073521C06B2000E86C5B;
 			productRefGroup = 5C21073F21C06B2000E86C5B /* Products */;
@@ -328,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C21074C21C06B2200E86C5B /* LaunchScreen.storyboard in Resources */,
+				5CAC208321D40E4A00517A98 /* Localizable.strings in Resources */,
 				5C21074921C06B2200E86C5B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C60C5BC21C073430031E342 /* LaunchScreen.storyboard in Resources */,
+				5CAC208221D40E4A00517A98 /* Localizable.strings in Resources */,
 				5C60C5BD21C073430031E342 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,6 +451,7 @@
 				5C189BE721CEE483005F60D9 /* RootAssembly.swift in Sources */,
 				5C3E467621CE638000FEC854 /* CommonRequestBuilder.swift in Sources */,
 				5C49F77721D40257008AE043 /* ViewControllerAssembly.swift in Sources */,
+				5CAC208921D40EBD00517A98 /* String+Localized.swift in Sources */,
 				5C3E467421CE637400FEC854 /* IParser.swift in Sources */,
 				5C21074421C06B2000E86C5B /* ViewController.swift in Sources */,
 				5C3E467F21CE653D00FEC854 /* CommonRequestClient.swift in Sources */,
@@ -461,6 +472,7 @@
 				5C189BE621CEE483005F60D9 /* RootAssembly.swift in Sources */,
 				5C3E466B21CE5A0400FEC854 /* CommonRequestBuilder.swift in Sources */,
 				5C49F77621D40257008AE043 /* ViewControllerAssembly.swift in Sources */,
+				5CAC208821D40EBD00517A98 /* String+Localized.swift in Sources */,
 				5C60C5B821C073430031E342 /* ViewController.swift in Sources */,
 				5C60C5C621C074B90031E342 /* Environment.swift in Sources */,
 				5C3E467E21CE653D00FEC854 /* CommonRequestClient.swift in Sources */,
@@ -484,6 +496,14 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		5CAC208521D40E4A00517A98 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CAC208621D40E5400517A98 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -491,6 +511,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -552,6 +573,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

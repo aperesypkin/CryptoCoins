@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Test"
+        title = "test_key".localized
         
         let view = UIView(frame: .init(x: 100, y: 100, width: 100, height: 100))
         view.backgroundColor = .red
