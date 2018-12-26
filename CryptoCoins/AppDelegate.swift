@@ -7,13 +7,19 @@
 //
 
 import UIKit
+import Dip
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    private let container = rootAssembly
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        window = try! container.resolve()
+        window?.makeKeyAndVisible()
         
         return true
     }
