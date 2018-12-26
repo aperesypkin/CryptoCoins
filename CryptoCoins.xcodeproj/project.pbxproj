@@ -41,6 +41,8 @@
 		5CAC208321D40E4A00517A98 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5CAC208521D40E4A00517A98 /* Localizable.strings */; };
 		5CAC208821D40EBD00517A98 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAC208721D40EBD00517A98 /* String+Localized.swift */; };
 		5CAC208921D40EBD00517A98 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAC208721D40EBD00517A98 /* String+Localized.swift */; };
+		5CAC208B21D4160B00517A98 /* CoreAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAC208A21D4160B00517A98 /* CoreAssembly.swift */; };
+		5CAC208C21D4160B00517A98 /* CoreAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAC208A21D4160B00517A98 /* CoreAssembly.swift */; };
 		7D158844FCADFEA23699AF92 /* Pods_Debug.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D5ADA77221571A8A63CA44 /* Pods_Debug.framework */; };
 		8510059BD0179C141259BFC8 /* Pods_Production.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63E8A5B4806223228D714532 /* Pods_Production.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +69,7 @@
 		5C60C5D621C07D720031E342 /* IRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRequest.swift; sourceTree = "<group>"; };
 		5CAC208621D40E5400517A98 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5CAC208721D40EBD00517A98 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
+		5CAC208A21D4160B00517A98 /* CoreAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAssembly.swift; sourceTree = "<group>"; };
 		63E8A5B4806223228D714532 /* Pods_Production.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Production.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		816C52D839712334AFD80E3B /* Pods-Debug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Debug.release.xcconfig"; path = "Pods/Target Support Files/Pods-Debug/Pods-Debug.release.xcconfig"; sourceTree = "<group>"; };
 		C2933F659A5ED0D8F0EC3E49 /* Pods-Debug.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Debug.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Debug/Pods-Debug.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +147,7 @@
 				5C3E468021CE660A00FEC854 /* Result.swift */,
 				5CAC208721D40EBD00517A98 /* String+Localized.swift */,
 				5CAC208521D40E4A00517A98 /* Localizable.strings */,
+				5CAC208A21D4160B00517A98 /* CoreAssembly.swift */,
 				5C3E466F21CE62CE00FEC854 /* Networking */,
 				5C21074821C06B2200E86C5B /* Assets.xcassets */,
 				5C21074A21C06B2200E86C5B /* LaunchScreen.storyboard */,
@@ -450,6 +454,7 @@
 				5C3E467B21CE647100FEC854 /* IRequestClient.swift in Sources */,
 				5C189BE721CEE483005F60D9 /* RootAssembly.swift in Sources */,
 				5C3E467621CE638000FEC854 /* CommonRequestBuilder.swift in Sources */,
+				5CAC208C21D4160B00517A98 /* CoreAssembly.swift in Sources */,
 				5C49F77721D40257008AE043 /* ViewControllerAssembly.swift in Sources */,
 				5CAC208921D40EBD00517A98 /* String+Localized.swift in Sources */,
 				5C3E467421CE637400FEC854 /* IParser.swift in Sources */,
@@ -471,6 +476,7 @@
 				5C3E467A21CE647100FEC854 /* IRequestClient.swift in Sources */,
 				5C189BE621CEE483005F60D9 /* RootAssembly.swift in Sources */,
 				5C3E466B21CE5A0400FEC854 /* CommonRequestBuilder.swift in Sources */,
+				5CAC208B21D4160B00517A98 /* CoreAssembly.swift in Sources */,
 				5C49F77621D40257008AE043 /* ViewControllerAssembly.swift in Sources */,
 				5CAC208821D40EBD00517A98 /* String+Localized.swift in Sources */,
 				5C60C5B821C073430031E342 /* ViewController.swift in Sources */,

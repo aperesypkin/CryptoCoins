@@ -11,7 +11,7 @@ import Dip
 let rootAssembly = DependencyContainer { container in
     unowned let container = container
     
-    container.register(.shared) { UIWindow(frame: UIScreen.main.bounds) }.resolvingProperties { _, window in
+    container.register { UIWindow(frame: UIScreen.main.bounds) }.resolvingProperties { _, window in
         let viewController = try! viewControllerAssembly.resolve() as ViewController
         let navigationController = UINavigationController(rootViewController: viewController)
         window.rootViewController = navigationController

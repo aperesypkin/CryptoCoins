@@ -23,7 +23,7 @@ protocol IRequest {
 extension IRequest {
     var domain: String {
         switch Environment.current {
-        case .debug: return "https://sandbox.coinmarketcap.com"
+        case .debug: return "https://sandbox-api.coinmarketcap.com"
         case .production: return "https://pro-api.coinmarketcap.com"
         }
     }

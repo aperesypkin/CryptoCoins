@@ -9,7 +9,7 @@
 import Dip
 
 let viewControllerAssembly = DependencyContainer { container in
-    container.register(.shared) { ViewController() }.resolvingProperties { _, controller in
+    container.register { ViewController(requestClient: try! coreAssembly.resolve()) }.resolvingProperties { _, controller in
         controller.view.backgroundColor = .white
     }
 }
