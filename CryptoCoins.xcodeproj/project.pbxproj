@@ -11,7 +11,6 @@
 		5C189BE721CEE483005F60D9 /* RootAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C189BE521CEE483005F60D9 /* RootAssembly.swift */; };
 		5C21074221C06B2000E86C5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C21074121C06B2000E86C5B /* AppDelegate.swift */; };
 		5C21074421C06B2000E86C5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C21074321C06B2000E86C5B /* ViewController.swift */; };
-		5C21074721C06B2000E86C5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C21074521C06B2000E86C5B /* Main.storyboard */; };
 		5C21074921C06B2200E86C5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C21074821C06B2200E86C5B /* Assets.xcassets */; };
 		5C21074C21C06B2200E86C5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C21074A21C06B2200E86C5B /* LaunchScreen.storyboard */; };
 		5C3E466921CE59CC00FEC854 /* IRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E466821CE59CC00FEC854 /* IRequestBuilder.swift */; };
@@ -34,7 +33,6 @@
 		5C60C5B921C073430031E342 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C21074121C06B2000E86C5B /* AppDelegate.swift */; };
 		5C60C5BC21C073430031E342 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C21074A21C06B2200E86C5B /* LaunchScreen.storyboard */; };
 		5C60C5BD21C073430031E342 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C21074821C06B2200E86C5B /* Assets.xcassets */; };
-		5C60C5BE21C073430031E342 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C21074521C06B2000E86C5B /* Main.storyboard */; };
 		5C60C5C521C074B90031E342 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C60C5C421C074B90031E342 /* Environment.swift */; };
 		5C60C5C621C074B90031E342 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C60C5C421C074B90031E342 /* Environment.swift */; };
 		5C60C5D721C07D720031E342 /* IRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C60C5D621C07D720031E342 /* IRequest.swift */; };
@@ -49,7 +47,6 @@
 		5C21073E21C06B2000E86C5B /* Production.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Production.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C21074121C06B2000E86C5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C21074321C06B2000E86C5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5C21074621C06B2000E86C5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5C21074821C06B2200E86C5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C21074B21C06B2200E86C5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C21074D21C06B2200E86C5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -140,7 +137,6 @@
 				5C60C5C421C074B90031E342 /* Environment.swift */,
 				5C3E468021CE660A00FEC854 /* Result.swift */,
 				5C3E466F21CE62CE00FEC854 /* Networking */,
-				5C21074521C06B2000E86C5B /* Main.storyboard */,
 				5C21074821C06B2200E86C5B /* Assets.xcassets */,
 				5C21074A21C06B2200E86C5B /* LaunchScreen.storyboard */,
 				5C21074D21C06B2200E86C5B /* Info.plist */,
@@ -333,7 +329,6 @@
 			files = (
 				5C21074C21C06B2200E86C5B /* LaunchScreen.storyboard in Resources */,
 				5C21074921C06B2200E86C5B /* Assets.xcassets in Resources */,
-				5C21074721C06B2000E86C5B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,7 +338,6 @@
 			files = (
 				5C60C5BC21C073430031E342 /* LaunchScreen.storyboard in Resources */,
 				5C60C5BD21C073430031E342 /* Assets.xcassets in Resources */,
-				5C60C5BE21C073430031E342 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,14 +476,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5C21074521C06B2000E86C5B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5C21074621C06B2000E86C5B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5C21074A21C06B2200E86C5B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
