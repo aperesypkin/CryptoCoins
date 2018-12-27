@@ -12,7 +12,7 @@ let rootAssembly = DependencyContainer { container in
     unowned let container = container
     
     container.register { UIWindow(frame: UIScreen.main.bounds) }.resolvingProperties { _, window in
-        let viewController = try! viewControllerAssembly.resolve() as ViewController
+        let viewController = try! cryptocurrencyListAssembly.resolve() as CryptocurrencyListViewController
         let navigationController = UINavigationController(rootViewController: viewController)
         window.rootViewController = navigationController
     }
