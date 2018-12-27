@@ -45,6 +45,8 @@
 		5C5289B021D562C400802E5A /* CryptocurrencyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5289AE21D562C400802E5A /* CryptocurrencyListViewController.xib */; };
 		5C5289B321D5640D00802E5A /* CryptocurrencyListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5289B221D5640D00802E5A /* CryptocurrencyListDataManager.swift */; };
 		5C5289B421D5640D00802E5A /* CryptocurrencyListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5289B221D5640D00802E5A /* CryptocurrencyListDataManager.swift */; };
+		5C5289BC21D568DA00802E5A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C5289BB21D568DA00802E5A /* Default-568h@2x.png */; };
+		5C5289BD21D568E900802E5A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C5289BB21D568DA00802E5A /* Default-568h@2x.png */; };
 		5C60C5B821C073430031E342 /* CryptocurrencyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C21074321C06B2000E86C5B /* CryptocurrencyListViewController.swift */; };
 		5C60C5B921C073430031E342 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C21074121C06B2000E86C5B /* AppDelegate.swift */; };
 		5C60C5C521C074B90031E342 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C60C5C421C074B90031E342 /* Environment.swift */; };
@@ -83,6 +85,7 @@
 		5C5289A521D55F7B00802E5A /* ParsableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsableModel.swift; sourceTree = "<group>"; };
 		5C5289AE21D562C400802E5A /* CryptocurrencyListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CryptocurrencyListViewController.xib; sourceTree = "<group>"; };
 		5C5289B221D5640D00802E5A /* CryptocurrencyListDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptocurrencyListDataManager.swift; sourceTree = "<group>"; };
+		5C5289BB21D568DA00802E5A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5C60C5C221C073430031E342 /* Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Debug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C60C5C421C074B90031E342 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		5C60C5D621C07D720031E342 /* IRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRequest.swift; sourceTree = "<group>"; };
@@ -295,6 +298,7 @@
 		5C52897F21D55C2400802E5A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5C5289BB21D568DA00802E5A /* Default-568h@2x.png */,
 				5C5289B821D5686100802E5A /* Assets */,
 				5C5289B721D5685700802E5A /* InfoPlists */,
 				5C5289BA21D5687800802E5A /* LaunchScreen */,
@@ -608,6 +612,7 @@
 				5C5289B021D562C400802E5A /* CryptocurrencyListViewController.xib in Resources */,
 				5C52898C21D55C2400802E5A /* InfoPlist.strings in Resources */,
 				5C52898A21D55C2400802E5A /* LaunchScreen.storyboard in Resources */,
+				5C5289BD21D568E900802E5A /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,6 +625,7 @@
 				5C5289AF21D562C400802E5A /* CryptocurrencyListViewController.xib in Resources */,
 				5C52898B21D55C2400802E5A /* InfoPlist.strings in Resources */,
 				5C52898921D55C2400802E5A /* LaunchScreen.storyboard in Resources */,
+				5C5289BC21D568DA00802E5A /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -914,7 +920,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FXS2GW5LYK;
-				INFOPLIST_FILE = "$(SRCROOT)/CryptoCoins/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/CryptoCoins/Resources/InfoPlists/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -933,7 +939,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FXS2GW5LYK;
-				INFOPLIST_FILE = "$(SRCROOT)/CryptoCoins/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/CryptoCoins/Resources/InfoPlists/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -952,7 +958,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Debug";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FXS2GW5LYK;
-				INFOPLIST_FILE = "$(SRCROOT)/CryptoCoins/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/CryptoCoins/Resources/InfoPlists/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -971,7 +977,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Debug";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FXS2GW5LYK;
-				INFOPLIST_FILE = "$(SRCROOT)/CryptoCoins/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/CryptoCoins/Resources/InfoPlists/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
