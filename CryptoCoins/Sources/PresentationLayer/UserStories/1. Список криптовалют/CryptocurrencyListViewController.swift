@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CryptocurrencyListViewController: UIViewController {
+final class CryptocurrencyListViewController: UIViewController {
     
     private let dataManager: ICryptocurrencyListDataManager
     
@@ -25,6 +25,7 @@ class CryptocurrencyListViewController: UIViewController {
         super.viewDidLoad()
         
         title = "test_key".localized
+        dataManager.fetchData()
     }
 
 }

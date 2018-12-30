@@ -1,5 +1,5 @@
 //
-//  CryptocurrencyInfoRequest.swift
+//  LatestCryptocurrenciesRequest.swift
 //  CryptoCoins
 //
 //  Created by Alexander Peresypkin on 22/12/2018.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-class CryptocurrencyInfoRequest: IRequest {
+class LatestCryptocurrenciesRequest: IRequest {
     var endpoint: String {
-        return "cryptocurrency/info"
+        return "cryptocurrency/listings/latest"
     }
 }

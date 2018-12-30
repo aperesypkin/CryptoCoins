@@ -1,5 +1,5 @@
 //
-//  CommonRequestClient.swift
+//  RequestClient.swift
 //  CryptoCoins
 //
 //  Created by Alexander Peresypkin on 22/12/2018.
@@ -8,19 +8,17 @@
 
 import Foundation
 
-class CommonRequestClient: IRequestClient {
+class RequestClient: IRequestClient {
     
-    let requestBilder: IRequestBuilder
+    private let requestBilder: IRequestBuilder
     
     init(requestBilder: IRequestBuilder) {
         self.requestBilder = requestBilder
     }
     
-    func send<Parser: IParser>(request: IRequest,
-                               parser: Parser,
-                               completionHandler: @escaping (Result<Parser.Model>) -> Void) {
+    func send<Parser: IParser>(request: IRequest, parser: Parser, completionHandler: @escaping (Result<Parser.Model>) -> Void) {
         guard let urlRequest = requestBilder.buildURLRequest(from: request) else {
-            completionHandler(.error("url string can't be parsed to URL"))
+            completionHandler(.error("Не получилось сбилдить URLRequest"))
             return
         }
         
@@ -29,9 +27,10 @@ class CommonRequestClient: IRequestClient {
                 completionHandler(.error(error.localizedDescription))
                 return
             }
+            //print(String(data: data!, encoding: .utf8))
             
             guard let data = data, let parsedModel = parser.parse(data: data) else {
-                completionHandler(.error("received data can't be parsed"))
+                completionHandler(.error("Не получилось распарсить модель"))
                 return
             }
             
