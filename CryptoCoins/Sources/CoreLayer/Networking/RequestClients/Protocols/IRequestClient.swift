@@ -9,5 +9,5 @@
 import Foundation
 
 protocol IRequestClient {
-    func send<Parser: IParser>(request: IRequest, parser: Parser, completionHandler: @escaping (Result<Parser.Model>) -> Void)
+    func send<Parser: IParser>(request: IRequest, parser: Parser, completion: @escaping (Result<Parser.Model>) -> Void)
 }

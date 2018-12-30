@@ -16,25 +16,24 @@ class RequestClient: IRequestClient {
         self.requestBilder = requestBilder
     }
     
-    func send<Parser: IParser>(request: IRequest, parser: Parser, completionHandler: @escaping (Result<Parser.Model>) -> Void) {
+    func send<Parser: IParser>(request: IRequest, parser: Parser, completion: @escaping (Result<Parser.Model>) -> Void) {
         guard let urlRequest = requestBilder.buildURLRequest(from: request) else {
-            completionHandler(.error("Не получилось сбилдить URLRequest"))
+            completion(.error("⚠️ Не получилось сбилдить URLRequest"))
             return
         }
         
         let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, _, error in
             if let error = error {
-                completionHandler(.error(error.localizedDescription))
+                completion(.error(error.localizedDescription))
                 return
             }
-            //print(String(data: data!, encoding: .utf8))
             
             guard let data = data, let parsedModel = parser.parse(data: data) else {
-                completionHandler(.error("Не получилось распарсить модель"))
+                completion(.error("⚠️ Не получилось распарсить модель"))
                 return
             }
             
-            completionHandler(.success(parsedModel))
+            completion(.success(parsedModel))
         }
         
         dataTask.resume()

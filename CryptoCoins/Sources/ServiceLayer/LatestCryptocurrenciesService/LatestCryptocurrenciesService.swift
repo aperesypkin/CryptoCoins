@@ -8,10 +8,6 @@
 
 import Foundation
 
-protocol ILatestCryptocurrenciesService {
-    func fetchLatestCryptocurrencies(completion: @escaping (Result<[LatestCryptocurrenciesModel]>) -> Void)
-}
-
 class LatestCryptocurrenciesService: ILatestCryptocurrenciesService {
     
     typealias Model = RootModel<[LatestCryptocurrenciesModel]>
@@ -22,7 +18,7 @@ class LatestCryptocurrenciesService: ILatestCryptocurrenciesService {
         self.requestClient = requestClient
     }
     
-    func fetchLatestCryptocurrencies(completion: @escaping (Result<[LatestCryptocurrenciesModel]>) -> Void) {
+    func loadLatestCryptocurrencies(completion: @escaping (Result<[LatestCryptocurrenciesModel]>) -> Void) {
         let request = LatestCryptocurrenciesRequest()
         let parser = JSONDecoderParser<Model>()
         requestClient.send(request: request, parser: parser) { result in
@@ -30,9 +26,8 @@ class LatestCryptocurrenciesService: ILatestCryptocurrenciesService {
             case .success(let model):
                 if let dataModel = model.data {
                     completion(.success(dataModel))
-                    return
-                } else {
-                    completion(.error(model.status.errorMessage!))
+                } else if let errorMessage = model.status.errorMessage {
+                    completion(.error(errorMessage))
                 }
             case .error(let error):
                 completion(.error(error))

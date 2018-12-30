@@ -9,7 +9,7 @@
 import Foundation
 
 protocol ICryptocurrencyListDataManager {
-    func fetchData()
+    func loadDataSource(completion: @escaping ([LatestCryptocurrenciesModel]?) -> Void)
 }
 
 class CryptocurrencyListDataManager: ICryptocurrencyListDataManager {
@@ -20,10 +20,13 @@ class CryptocurrencyListDataManager: ICryptocurrencyListDataManager {
         self.latestCryptocurrenciesService = latestCryptocurrenciesService
     }
     
-    func fetchData() {
-        latestCryptocurrenciesService.fetchLatestCryptocurrencies { result in
+    func loadDataSource(completion: @escaping ([LatestCryptocurrenciesModel]?) -> Void) {
+        latestCryptocurrenciesService.loadLatestCryptocurrencies { result in
             switch result {
-            case .success(let model): print(model)
+            case .success(let model):
+                DispatchQueue.main.async {
+                    completion(model)
+                }
             case .error(let error): print(error)
             }
         }
