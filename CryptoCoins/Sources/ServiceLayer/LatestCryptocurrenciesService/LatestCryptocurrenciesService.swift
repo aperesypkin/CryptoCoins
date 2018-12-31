@@ -27,10 +27,10 @@ class LatestCryptocurrenciesService: ILatestCryptocurrenciesService {
                 if let dataModel = model.data {
                     completion(.success(dataModel))
                 } else if let errorMessage = model.status.errorMessage {
-                    completion(.error(errorMessage))
+                    completion(.failure(errorMessage))
                 }
-            case .error(let error):
-                completion(.error(error))
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
     }

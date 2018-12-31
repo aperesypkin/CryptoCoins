@@ -16,4 +16,11 @@ struct StatusModel {
     let creditCount: Int
 }
 
-extension StatusModel: Decodable {}
+extension StatusModel: Decodable {
+    private enum CodingKeys: String, CodingKey {
+        case timestamp, elapsed
+        case errorCode = "error_code"
+        case errorMessage = "error_message"
+        case creditCount = "credit_count"
+    }
+}

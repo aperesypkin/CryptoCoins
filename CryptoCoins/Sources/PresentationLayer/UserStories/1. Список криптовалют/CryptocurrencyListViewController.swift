@@ -16,9 +16,9 @@ final class CryptocurrencyListViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var tableView: UITableView! {
+    @IBOutlet private weak var tableView: UITableView! {
         didSet {
-            tableView.register(UITableViewCell.self)
+            tableView.register(CryptocurrencyTableViewCell.self)
             tableView.dataSource = self
         }
     }
@@ -37,8 +37,12 @@ final class CryptocurrencyListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "test_key".localized
+        setup()
         loadDataSource()
+    }
+    
+    private func setup() {
+        title = "test_key".localized
     }
     
     private func loadDataSource() {
@@ -59,9 +63,21 @@ extension CryptocurrencyListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = dataSource[indexPath.row]
         
-        let cell: UITableViewCell = tableView.dequeueReusableCell(for: indexPath)
-        cell.textLabel?.text = "\(indexPath.row + 1). \(model.name) \(model.numMarketPairs)"
+        let cell: CryptocurrencyTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+        cell.nameLabel.text = model.name
+        cell.symbolLabel.text = model.symbol
+        
+        guard let usdQuote = model.quote["USD"] else { return cell }
+        cell.priceLabel.text = "\(usdQuote.price.rounded(toPlaces: 2)) $"
+        cell.percentChangeLabel.text = "\(usdQuote.percentChange1h.rounded(toPlaces: 1)) %"
         
         return cell
+    }
+}
+
+extension Double {
+    func rounded(toPlaces places: Int) -> Double {
+        let multiplier = pow(10, Double(places))
+        return Darwin.round(self * multiplier) / multiplier
     }
 }

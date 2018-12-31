@@ -8,7 +8,23 @@
 
 import Foundation
 
-enum Result<T> {
-    case success(T)
-    case error(String)
+enum Result<Value> {
+    case success(Value)
+    case failure(String)
+}
+
+extension Result {
+    var resolve: Value? {
+        switch self {
+        case .success(let value): return value
+        case .failure: return nil
+        }
+    }
+    
+    var error: String? {
+        switch self {
+        case .success: return nil
+        case .failure(let error): return error
+        }
+    }
 }

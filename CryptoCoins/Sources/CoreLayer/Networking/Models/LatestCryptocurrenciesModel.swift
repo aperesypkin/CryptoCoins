@@ -20,6 +20,16 @@ struct LatestCryptocurrenciesModel {
     let totalSupply: Double
     let maxSupply: Int?
     let tags: [String]
+    let quote: [String: QuoteModel]
 }
 
-extension LatestCryptocurrenciesModel: Decodable {}
+extension LatestCryptocurrenciesModel: Decodable {
+    private enum CodingKeys: String, CodingKey {
+        case id, name, symbol, slug, tags, quote
+        case cmcRank = "cmc_rank"
+        case numMarketPairs = "num_market_pairs"
+        case circulatingSupply = "circulating_supply"
+        case totalSupply = "total_supply"
+        case maxSupply = "max_supply"
+    }
+}

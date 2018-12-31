@@ -11,7 +11,7 @@ import Foundation
 class JSONDecoderParser<DecodableModel: Decodable>: IParser {
     func parse(data: Data) -> DecodableModel? {
         let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        //decoder.keyDecodingStrategy = .convertFromSnakeCase
         decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
         do {
             let model = try decoder.decode(DecodableModel.self, from: data)

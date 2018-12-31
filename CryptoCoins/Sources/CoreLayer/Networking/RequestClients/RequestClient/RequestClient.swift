@@ -8,7 +8,7 @@
 
 import Foundation
 
-class RequestClient: IRequestClient {
+final class RequestClient: IRequestClient {
     
     private let requestBilder: IRequestBuilder
     
@@ -18,18 +18,18 @@ class RequestClient: IRequestClient {
     
     func send<Parser: IParser>(request: IRequest, parser: Parser, completion: @escaping (Result<Parser.Model>) -> Void) {
         guard let urlRequest = requestBilder.buildURLRequest(from: request) else {
-            completion(.error("⚠️ Не получилось сбилдить URLRequest"))
+            completion(.failure("⚠️ Не получилось сбилдить URLRequest"))
             return
         }
         
         let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, _, error in
             if let error = error {
-                completion(.error(error.localizedDescription))
+                completion(.failure(error.localizedDescription))
                 return
             }
-            
+            //print(String(data: data!, encoding: .utf8))
             guard let data = data, let parsedModel = parser.parse(data: data) else {
-                completion(.error("⚠️ Не получилось распарсить модель"))
+                completion(.failure("⚠️ Не получилось распарсить модель"))
                 return
             }
             

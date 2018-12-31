@@ -12,7 +12,7 @@ protocol ICryptocurrencyListDataManager {
     func loadDataSource(completion: @escaping ([LatestCryptocurrenciesModel]?) -> Void)
 }
 
-class CryptocurrencyListDataManager: ICryptocurrencyListDataManager {
+final class CryptocurrencyListDataManager: ICryptocurrencyListDataManager {
     
     private let latestCryptocurrenciesService: ILatestCryptocurrenciesService
     
@@ -27,7 +27,7 @@ class CryptocurrencyListDataManager: ICryptocurrencyListDataManager {
                 DispatchQueue.main.async {
                     completion(model)
                 }
-            case .error(let error): print(error)
+            case .failure(let error): print(error)
             }
         }
     }
