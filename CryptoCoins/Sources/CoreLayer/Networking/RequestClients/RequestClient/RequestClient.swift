@@ -18,7 +18,7 @@ final class RequestClient: IRequestClient {
     
     func send<Parser: IParser>(request: IRequest, parser: Parser, completion: @escaping (Result<Parser.Model>) -> Void) {
         guard let urlRequest = requestBilder.buildURLRequest(from: request) else {
-            completion(.failure("⚠️ Не получилось сбилдить URLRequest"))
+            completion(.failure("error_build_url_request".localized))
             return
         }
         
@@ -29,7 +29,7 @@ final class RequestClient: IRequestClient {
             }
             //print(String(data: data!, encoding: .utf8))
             guard let data = data, let parsedModel = parser.parse(data: data) else {
-                completion(.failure("⚠️ Не получилось распарсить модель"))
+                completion(.failure("error_parse_data".localized))
                 return
             }
             

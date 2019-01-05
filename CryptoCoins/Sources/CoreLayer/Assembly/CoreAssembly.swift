@@ -9,6 +9,8 @@
 import Dip
 
 let coreAssembly = DependencyContainer { container in
+    unowned let container = container
+    
     container.register { RequestClient(requestBilder: $0) as IRequestClient }
     container.register { RequestBuilder() as IRequestBuilder }
 }

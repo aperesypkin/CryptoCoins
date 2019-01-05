@@ -9,6 +9,7 @@
 import Foundation
 
 final class LatestCryptocurrenciesRequest: IRequest {
+    
     var endpoint: String {
         return "cryptocurrency/listings/latest"
     }
@@ -16,4 +17,5 @@ final class LatestCryptocurrenciesRequest: IRequest {
     var urlParams: [String: String]? {
         return ["cryptocurrency_type": "coins"]
     }
+    
 }

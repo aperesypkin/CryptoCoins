@@ -8,7 +8,8 @@
 
 import Foundation
 
-class JSONDecoderParser<DecodableModel: Decodable>: IParser {
+final class JSONDecoderParser<DecodableModel: Decodable>: IParser {
+    
     func parse(data: Data) -> DecodableModel? {
         let decoder = JSONDecoder()
         //decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -21,4 +22,5 @@ class JSONDecoderParser<DecodableModel: Decodable>: IParser {
             return nil
         }
     }
+    
 }

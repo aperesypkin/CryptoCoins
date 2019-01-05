@@ -51,14 +51,12 @@ final class CryptocurrencyListViewController: UIViewController {
     }
     
     private func setupUI() {
-        title = "test_key".localized
+        title = "cryptocurrency_list_title".localized
     }
     
     private func loadDataSource() {
         dataManager.loadDataSource { [weak self] dataSource in
-            if let dataSource = dataSource {
-                self?.dataSource = dataSource
-            }
+            self?.dataSource = dataSource
         }
     }
 
@@ -77,16 +75,4 @@ extension CryptocurrencyListViewController: UITableViewDataSource {
         
         return cell
     }
-}
-
-extension Double {
-    func rounded(toPlaces places: Int) -> Double {
-        let multiplier = pow(10, Double(places))
-        return Darwin.round(self * multiplier) / multiplier
-    }
-}
-
-protocol ConfigurableView {
-    associatedtype Model
-    func configure(with model: Model)
 }

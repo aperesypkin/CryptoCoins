@@ -9,6 +9,7 @@
 import Foundation
 
 final class LatestMarketQuotesRequest: IRequest {
+    
     private let identifiers: String
     
     init(identifiers: [Int]) {
@@ -24,4 +25,5 @@ final class LatestMarketQuotesRequest: IRequest {
     var urlParams: [String: String]? {
         return ["id": identifiers]
     }
+    
 }

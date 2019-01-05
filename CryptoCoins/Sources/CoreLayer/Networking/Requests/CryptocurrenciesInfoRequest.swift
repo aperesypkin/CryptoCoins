@@ -25,4 +25,5 @@ final class CryptocurrenciesInfoRequest: IRequest {
     var urlParams: [String: String]? {
         return ["id": identifiers]
     }
+    
 }

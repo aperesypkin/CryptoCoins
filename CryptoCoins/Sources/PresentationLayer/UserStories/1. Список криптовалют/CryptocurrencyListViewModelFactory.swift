@@ -12,12 +12,12 @@ final class CryptocurrencyListViewModelFactory {
     
     typealias ViewModel = CryptocurrencyListViewController.ViewModel
     
-    func createViewModel(quotes: LatestMarketQuotesModel,
+    func createViewModel(quotes: [String: QuoteModel],
                          metadata: CryptocurrencyMetadataModel) -> ViewModel {
         let price: String?
         let percentChange: String?
         
-        if let quote = quotes.quote["USD"] {
+        if let quote = quotes["USD"] {
             price = "\(quote.price.rounded(toPlaces: 2)) $"
             percentChange = "\(quote.percentChange1h.rounded(toPlaces: 1)) %"
         } else {

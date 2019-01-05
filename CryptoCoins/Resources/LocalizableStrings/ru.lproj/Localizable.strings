@@ -6,4 +6,9 @@
   Copyright © 2018 Alexander Peresypkin. All rights reserved.
 */
 
-"test_key" = "Список криптовалют";
+// Errors
+"error_build_url_request" = "⚠️ Не получилось сбилдить URLRequest";
+"error_parse_data" = "⚠️ Не получилось распарсить модель";
+
+// 1. Список криптовалют
+"cryptocurrency_list_title" = "Список криптовалют";

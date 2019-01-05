@@ -9,6 +9,7 @@
 import Foundation
 
 final class CryptocurrenciesIdentifiersRequest: IRequest {
+    
     var endpoint: String {
         return "cryptocurrency/map"
     }
@@ -16,4 +17,5 @@ final class CryptocurrenciesIdentifiersRequest: IRequest {
     var urlParams: [String: String]? {
         return ["limit": "100"]
     }
+    
 }

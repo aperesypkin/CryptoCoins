@@ -8,7 +8,8 @@
 
 import Foundation
 
-class RequestBuilder: IRequestBuilder {
+final class RequestBuilder: IRequestBuilder {
+    
     func buildURLRequest(from request: IRequest) -> URLRequest? {
         var urlComponents = URLComponents(string: "\(request.domain)/\(request.apiVersion)/\(request.endpoint)")
         
@@ -24,14 +25,5 @@ class RequestBuilder: IRequestBuilder {
         urlRequest.addValue(request.apiKey, forHTTPHeaderField: "X-CMC_PRO_API_KEY")
         return urlRequest
     }
-}
-
-extension Dictionary where Key == String, Value == String {
-    var queryItems: [URLQueryItem] {
-        var items: [URLQueryItem] = []
-        for (key, value) in self {
-            items.append(URLQueryItem(name: key, value: value))
-        }
-        return items
-    }
+    
 }

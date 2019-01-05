@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LatestCryptocurrenciesService: ILatestCryptocurrenciesService {
+final class LatestCryptocurrenciesService: ILatestCryptocurrenciesService {
     
     typealias Model = RootModel<[LatestCryptocurrencyModel]>
     

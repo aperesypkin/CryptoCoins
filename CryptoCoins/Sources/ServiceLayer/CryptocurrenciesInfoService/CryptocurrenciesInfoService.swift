@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CryptocurrenciesInfoService: ICryptocurrenciesInfoService {
+final class CryptocurrenciesInfoService: ICryptocurrenciesInfoService {
     
     typealias Model = RootModel<[String: CryptocurrencyMetadataModel]>
     

@@ -9,20 +9,20 @@
 import UIKit
 import Kingfisher
 
-class CryptocurrencyTableViewCell: UITableViewCell, ConfigurableView {
+class CryptocurrencyTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var coinImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var symbolLabel: UILabel!
-    @IBOutlet weak var percentChangeLabel: UILabel!
+    @IBOutlet private weak var coinImageView: UIImageView!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var priceLabel: UILabel!
+    @IBOutlet private weak var symbolLabel: UILabel!
+    @IBOutlet private weak var percentChangeLabel: UILabel!
     
-    func configure(with model: CryptocurrencyListViewController.ViewModel) {
-        nameLabel.text = model.name
-        symbolLabel.text = model.symbol
-        priceLabel.text = model.price
-        percentChangeLabel.text = model.percentChange
-        coinImageView.kf.setImage(with: model.image)
+    func configure(with viewModel: CryptocurrencyListViewController.ViewModel) {
+        nameLabel.text = viewModel.name
+        symbolLabel.text = viewModel.symbol
+        priceLabel.text = viewModel.price
+        percentChangeLabel.text = viewModel.percentChange
+        coinImageView.kf.setImage(with: viewModel.image)
     }
     
 }
