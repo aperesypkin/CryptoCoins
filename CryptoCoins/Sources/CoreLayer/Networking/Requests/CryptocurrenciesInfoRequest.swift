@@ -13,9 +13,7 @@ final class CryptocurrenciesInfoRequest: IRequest {
     private let identifiers: String
     
     init(identifiers: [Int]) {
-        var values = ""
-        identifiers.forEach { values += "\($0)," }
-        self.identifiers = String(values.dropLast())
+        self.identifiers = identifiers.map { String($0) }.joined(separator: ",")
     }
     
     var endpoint: String {

@@ -12,8 +12,8 @@ final class CryptocurrencyListViewController: UIViewController {
     
     struct ViewModel {
         let image: URL
-        let name: String?
-        let symbol: String?
+        let name: String
+        let symbol: String
         let price: String?
         let percentChange: String?
     }
