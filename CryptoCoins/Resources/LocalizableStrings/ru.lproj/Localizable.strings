@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  CryptoCoins
+
+  Created by Alexander Peresypkin on 26/12/2018.
+  Copyright © 2018 Alexander Peresypkin. All rights reserved.
+*/
+
+// Errors
+"error_build_url_request" = "⚠️ Не получилось сбилдить URLRequest";
+"error_parse_data" = "⚠️ Не получилось распарсить модель";
+
+// 1. Список криптовалют
+"cryptocurrency_list_title" = "Список криптовалют";
