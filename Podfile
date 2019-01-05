@@ -6,6 +6,7 @@ use_frameworks!
 def common_pods
   pod 'Dip', '~> 7.0.0'
   pod 'SwiftLint', '~> 0.29.0'
+  pod 'Kingfisher', '~> 5.0.0'
 end
 
 target 'Debug' do

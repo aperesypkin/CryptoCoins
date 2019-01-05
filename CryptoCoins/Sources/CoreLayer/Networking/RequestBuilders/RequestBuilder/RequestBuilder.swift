@@ -12,8 +12,8 @@ class RequestBuilder: IRequestBuilder {
     func buildURLRequest(from request: IRequest) -> URLRequest? {
         var urlComponents = URLComponents(string: "\(request.domain)/\(request.apiVersion)/\(request.endpoint)")
         
-        if let body = request.body, !body.isEmpty {
-            urlComponents?.queryItems = body.queryItems
+        if let urlParams = request.urlParams, !urlParams.isEmpty {
+            urlComponents?.queryItems = urlParams.queryItems
         }
         
         guard let url = urlComponents?.url else { return nil }

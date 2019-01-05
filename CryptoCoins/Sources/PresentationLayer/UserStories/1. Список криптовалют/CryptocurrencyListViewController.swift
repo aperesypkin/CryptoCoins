@@ -10,7 +10,15 @@ import UIKit
 
 final class CryptocurrencyListViewController: UIViewController {
     
-    private var dataSource: [LatestCryptocurrenciesModel] = [] {
+    struct ViewModel {
+        let image: URL
+        let name: String?
+        let symbol: String?
+        let price: String?
+        let percentChange: String?
+    }
+    
+    private var dataSource: [ViewModel] = [] {
         didSet {
             tableView.reloadData()
         }
@@ -18,6 +26,7 @@ final class CryptocurrencyListViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
+            tableView.tableFooterView = UIView()
             tableView.register(CryptocurrencyTableViewCell.self)
             tableView.dataSource = self
         }
@@ -37,18 +46,18 @@ final class CryptocurrencyListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setup()
+        setupUI()
         loadDataSource()
     }
     
-    private func setup() {
+    private func setupUI() {
         title = "test_key".localized
     }
     
     private func loadDataSource() {
-        dataManager.loadDataSource { dataSource in
+        dataManager.loadDataSource { [weak self] dataSource in
             if let dataSource = dataSource {
-                self.dataSource = dataSource
+                self?.dataSource = dataSource
             }
         }
     }
@@ -61,15 +70,10 @@ extension CryptocurrencyListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = dataSource[indexPath.row]
+        let viewModel = dataSource[indexPath.row]
         
         let cell: CryptocurrencyTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-        cell.nameLabel.text = model.name
-        cell.symbolLabel.text = model.symbol
-        
-        guard let usdQuote = model.quote["USD"] else { return cell }
-        cell.priceLabel.text = "\(usdQuote.price.rounded(toPlaces: 2)) $"
-        cell.percentChangeLabel.text = "\(usdQuote.percentChange1h.rounded(toPlaces: 1)) %"
+        cell.configure(with: viewModel)
         
         return cell
     }
@@ -80,4 +84,9 @@ extension Double {
         let multiplier = pow(10, Double(places))
         return Darwin.round(self * multiplier) / multiplier
     }
+}
+
+protocol ConfigurableView {
+    associatedtype Model
+    func configure(with model: Model)
 }

@@ -1,16 +1,16 @@
 //
-//  LatestCryptocurrenciesService.swift
+//  CryptocurrenciesIdentifiersService.swift
 //  CryptoCoins
 //
-//  Created by Alexander Peresypkin on 27/12/2018.
-//  Copyright © 2018 Alexander Peresypkin. All rights reserved.
+//  Created by Alexander Peresypkin on 05/01/2019.
+//  Copyright © 2019 Alexander Peresypkin. All rights reserved.
 //
 
 import Foundation
 
-class LatestCryptocurrenciesService: ILatestCryptocurrenciesService {
+final class CryptocurrenciesIdentifiersService: ICryptocurrenciesIdentifiersService {
     
-    typealias Model = RootModel<[LatestCryptocurrencyModel]>
+    typealias Model = RootModel<[CryptocurrencyIdentifiersModel]>
     
     private let requestClient: IRequestClient
     
@@ -18,8 +18,8 @@ class LatestCryptocurrenciesService: ILatestCryptocurrenciesService {
         self.requestClient = requestClient
     }
     
-    func loadLatestCryptocurrencies(completion: @escaping (Result<[LatestCryptocurrencyModel]>) -> Void) {
-        let request = LatestCryptocurrenciesRequest()
+    func loadCryptocurrenciesIdentifiers(completion: @escaping (Result<[CryptocurrencyIdentifiersModel]>) -> Void) {
+        let request = CryptocurrenciesIdentifiersRequest()
         let parser = JSONDecoderParser<Model>()
         requestClient.send(request: request, parser: parser) { result in
             switch result {
@@ -34,5 +34,4 @@ class LatestCryptocurrenciesService: ILatestCryptocurrenciesService {
             }
         }
     }
-    
 }

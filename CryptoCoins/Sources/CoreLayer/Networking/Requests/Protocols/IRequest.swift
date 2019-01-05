@@ -17,7 +17,7 @@ protocol IRequest {
     var apiKey: String { get }
     var apiVersion: ApiVersion { get }
     var endpoint: String { get }
-    var body: [String: String]? { get }
+    var urlParams: [String: String]? { get }
 }
 
 extension IRequest {
@@ -39,7 +39,7 @@ extension IRequest {
         return .v1
     }
     
-    var body: [String: String]? {
+    var urlParams: [String: String]? {
         return nil
     }
 }

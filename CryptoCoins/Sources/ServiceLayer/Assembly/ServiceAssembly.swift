@@ -10,4 +10,7 @@ import Dip
 
 let serviceAssembly = DependencyContainer { container in
     container.register { LatestCryptocurrenciesService(requestClient: try! coreAssembly.resolve()) as ILatestCryptocurrenciesService }
+    container.register { CryptocurrenciesInfoService(requestClient: try! coreAssembly.resolve()) as ICryptocurrenciesInfoService }
+    container.register { CryptocurrenciesIdentifiersService(requestClient: try! coreAssembly.resolve()) as ICryptocurrenciesIdentifiersService }
+    container.register { LatestMarketQuotesService(requestClient: try! coreAssembly.resolve()) as ILatestMarketQuotesService }
 }

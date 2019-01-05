@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ILatestCryptocurrenciesService {
-    func loadLatestCryptocurrencies(completion: @escaping (Result<[LatestCryptocurrenciesModel]>) -> Void)
+    func loadLatestCryptocurrencies(completion: @escaping (Result<[LatestCryptocurrencyModel]>) -> Void)
 }
