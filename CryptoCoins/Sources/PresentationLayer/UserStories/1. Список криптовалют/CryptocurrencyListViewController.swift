@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class CryptocurrencyListViewController: UIViewController {
+final class CryptocurrencyListViewController: UIViewController, LoaderAvailable {
     
     struct ViewModel {
         let image: URL
@@ -55,7 +55,9 @@ final class CryptocurrencyListViewController: UIViewController {
     }
     
     private func loadDataSource() {
+        startLoaderAnimating()
         dataManager.loadDataSource { [weak self] dataSource in
+            self?.stopLoaderAnimating()
             self?.dataSource = dataSource
         }
     }
