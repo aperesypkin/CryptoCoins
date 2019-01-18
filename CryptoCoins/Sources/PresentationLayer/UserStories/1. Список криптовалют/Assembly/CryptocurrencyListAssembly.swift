@@ -9,11 +9,11 @@
 import Dip
 
 let cryptocurrencyListAssembly = DependencyContainer { container in
-    container.register { CryptocurrencyListViewController(dataManager: $0) }
+    container.register { CryptocurrencyListViewController(presenter: $0) }
     container.register {
-        CryptocurrencyListDataManager(latestCryptocurrenciesService: try! serviceAssembly.resolve(),
+        CryptocurrencyListPresenter(latestCryptocurrenciesService: try! serviceAssembly.resolve(),
                                       cryptocurrenciesInfoService: try! serviceAssembly.resolve())
-            as ICryptocurrencyListDataManager
+            as ICryptocurrencyListPresenter
     }
     
 }

@@ -17,12 +17,12 @@ class CryptocurrencyTableViewCell: UITableViewCell {
     @IBOutlet private weak var symbolLabel: UILabel!
     @IBOutlet private weak var percentChangeLabel: UILabel!
     
-    func configure(with viewModel: CryptocurrencyListViewController.ViewModel) {
-        nameLabel.text = viewModel.name
-        symbolLabel.text = viewModel.symbol
-        priceLabel.text = viewModel.price
-        percentChangeLabel.text = viewModel.percentChange
-        coinImageView.kf.setImage(with: viewModel.image)
+    func configure(with model: CryptocurrencyListViewModel) {
+        nameLabel.text = model.name
+        symbolLabel.text = model.symbol
+        priceLabel.text = model.price
+        percentChangeLabel.text = model.percentChange
+        coinImageView.kf.setImage(with: model.image)
     }
     
 }
