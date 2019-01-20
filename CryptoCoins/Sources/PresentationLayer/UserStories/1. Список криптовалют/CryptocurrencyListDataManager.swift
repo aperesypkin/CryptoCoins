@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Dip
 
 protocol ICryptocurrencyListView: AnyObject {
     func update(viewModels: [CryptocurrencyListViewModel])
@@ -30,14 +31,8 @@ final class CryptocurrencyListPresenter {
     
     private let viewModelFactory = CryptocurrencyListViewModelFactory()
     
-    private let latestCryptocurrenciesService: ILatestCryptocurrenciesService
-    private let cryptocurrenciesInfoService: ICryptocurrenciesInfoService
-    
-    init(latestCryptocurrenciesService: ILatestCryptocurrenciesService,
-         cryptocurrenciesInfoService: ICryptocurrenciesInfoService) {
-        self.latestCryptocurrenciesService = latestCryptocurrenciesService
-        self.cryptocurrenciesInfoService = cryptocurrenciesInfoService
-    }
+    private lazy var latestCryptocurrenciesService: ILatestCryptocurrenciesService = try! serviceAssembly.resolve()
+    private lazy var cryptocurrenciesInfoService: ICryptocurrenciesInfoService = try! serviceAssembly.resolve()
     
 }
 

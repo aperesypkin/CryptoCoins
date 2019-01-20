@@ -1,24 +1,28 @@
 PODS:
   - Dip (7.0.1)
   - Kingfisher (5.0.1)
+  - SnapKit (4.2.0)
   - SwiftLint (0.29.1)
 
 DEPENDENCIES:
   - Dip (~> 7.0.0)
   - Kingfisher (~> 5.0.0)
+  - SnapKit (~> 4.0)
   - SwiftLint (~> 0.29.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Dip
     - Kingfisher
+    - SnapKit
     - SwiftLint
 
 SPEC CHECKSUMS:
   Dip: 79509d5dc4f648e10e922ed79c608a7761c52b13
   Kingfisher: 4f771421b9208185217550528a06fd48756cb7c2
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftLint: 6772320e40b52049053a518c17db9b0634a0b45a
 
-PODFILE CHECKSUM: a8da19a9a8169f20dfcf7d1004659de28047b137
+PODFILE CHECKSUM: e9d618883447986250deb45a7a0af8a3a90dd919
 
 COCOAPODS: 1.5.3
