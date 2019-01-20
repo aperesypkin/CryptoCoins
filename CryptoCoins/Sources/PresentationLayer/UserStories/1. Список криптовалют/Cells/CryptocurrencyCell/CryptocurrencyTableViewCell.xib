@@ -26,7 +26,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="53" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="c9S-51-Vo5" secondAttribute="height" multiplier="1:1" id="Sub-6T-zae"/>
-                                    <constraint firstAttribute="height" constant="53" id="ses-nw-2m7"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pop-4a-bvx">

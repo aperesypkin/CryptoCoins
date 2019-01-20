@@ -1,5 +1,5 @@
 //
-//  CryptocurrencyListDataManager.swift
+//  CryptocurrencyListPresenter.swift
 //  CryptoCoins
 //
 //  Created by Alexander Peresypkin on 27/12/2018.
@@ -7,80 +7,81 @@
 //
 
 import Foundation
+import Dip
 
-protocol ICryptocurrencyListDataManager {
-    func loadDataSource(completion: @escaping ([CryptocurrencyListViewController.ViewModel]) -> Void)
+protocol ICryptocurrencyListView: AnyObject {
+    func update(viewModels: [CryptocurrencyListViewModel])
 }
 
-final class CryptocurrencyListDataManager: ICryptocurrencyListDataManager {
+protocol ICryptocurrencyListPresenter {
+    func viewDidLoad()
+}
+
+struct CryptocurrencyListViewModel {
+    let image: URL
+    let name: String
+    let symbol: String
+    let price: String?
+    let percentChange: String?
+}
+
+final class CryptocurrencyListPresenter {
     
-    typealias ViewModel = CryptocurrencyListViewController.ViewModel
+    weak var view: ICryptocurrencyListView?
     
     private let viewModelFactory = CryptocurrencyListViewModelFactory()
     
-    private var latestCryptocurrencyModels: [LatestCryptocurrencyModel] = []
-    private var cryptocurrencyMetadataModels: [String: CryptocurrencyMetadataModel] = [:]
+    private lazy var latestCryptocurrenciesService: ILatestCryptocurrenciesService = try! serviceAssembly.resolve()
+    private lazy var cryptocurrenciesInfoService: ICryptocurrenciesInfoService = try! serviceAssembly.resolve()
     
-    private let dispatchGroup = DispatchGroup()
+}
+
+extension CryptocurrencyListPresenter: ICryptocurrencyListPresenter {
     
-    private let latestCryptocurrenciesService: ILatestCryptocurrenciesService
-    private let cryptocurrenciesInfoService: ICryptocurrenciesInfoService
-    
-    init(latestCryptocurrenciesService: ILatestCryptocurrenciesService,
-         cryptocurrenciesInfoService: ICryptocurrenciesInfoService) {
-        self.latestCryptocurrenciesService = latestCryptocurrenciesService
-        self.cryptocurrenciesInfoService = cryptocurrenciesInfoService
-    }
-    
-    func loadDataSource(completion: @escaping ([ViewModel]) -> Void) {
-        loadLatestCryptocurrencies()
-        loadCryptocurrenciesInfo()
-        createViewModels(completion: completion)
-    }
-    
-    private func loadLatestCryptocurrencies() {
+    func viewDidLoad() {
+        var latestCryptocurrencyModels: [LatestCryptocurrencyModel] = []
+        var cryptocurrencyMetadataModels: [String: CryptocurrencyMetadataModel] = [:]
+        
+        let dispatchGroup = DispatchGroup()
+        
         dispatchGroup.enter()
         latestCryptocurrenciesService.loadLatestCryptocurrencies { result in
             switch result {
             case .success(let model):
-                self.latestCryptocurrencyModels = model
+                latestCryptocurrencyModels = model
             case .failure(let error):
                 print(error)
             }
-            self.dispatchGroup.leave()
+            dispatchGroup.leave()
         }
+        
         dispatchGroup.wait()
-    }
-    
-    private func loadCryptocurrenciesInfo() {
+        
         dispatchGroup.enter()
         cryptocurrenciesInfoService.loadCryptocurrenciesInfo(for: latestCryptocurrencyModels.map { $0.id }) { result in
             switch result {
             case .success(let model):
-                self.cryptocurrencyMetadataModels = model
+                cryptocurrencyMetadataModels = model
             case .failure(let error):
                 print(error)
             }
-            self.dispatchGroup.leave()
+            dispatchGroup.leave()
         }
-    }
-    
-    private func createViewModels(completion: @escaping ([ViewModel]) -> Void) {
+        
         dispatchGroup.notify(queue: .global()) {
-            var viewModels: [ViewModel] = []
+            var viewModels: [CryptocurrencyListViewModel] = []
             
-            self.latestCryptocurrencyModels.forEach {
+            latestCryptocurrencyModels.forEach {
                 let identifier = String($0.id)
-                guard let metadata = self.cryptocurrencyMetadataModels[identifier] else { return }
+                guard let metadata = cryptocurrencyMetadataModels[identifier] else { return }
                 
                 let viewModel = self.viewModelFactory.createViewModel(quotes: $0.quote, metadata: metadata)
                 viewModels.append(viewModel)
             }
             
             DispatchQueue.main.async {
-                completion(viewModels)
+                self.view?.update(viewModels: viewModels)
             }
         }
     }
-    
 }

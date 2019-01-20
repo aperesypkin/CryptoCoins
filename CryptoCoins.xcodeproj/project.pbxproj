@@ -50,8 +50,6 @@
 		5C52899F21D55ED400802E5A /* UITableView+RegisterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C52899D21D55ED400802E5A /* UITableView+RegisterCell.swift */; };
 		5C5289A121D55F0200802E5A /* UITableView+ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5289A021D55F0200802E5A /* UITableView+ReusableCell.swift */; };
 		5C5289A221D55F0200802E5A /* UITableView+ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5289A021D55F0200802E5A /* UITableView+ReusableCell.swift */; };
-		5C5289AF21D562C400802E5A /* CryptocurrencyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5289AE21D562C400802E5A /* CryptocurrencyListViewController.xib */; };
-		5C5289B021D562C400802E5A /* CryptocurrencyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5289AE21D562C400802E5A /* CryptocurrencyListViewController.xib */; };
 		5C5289B321D5640D00802E5A /* CryptocurrencyListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5289B221D5640D00802E5A /* CryptocurrencyListDataManager.swift */; };
 		5C5289B421D5640D00802E5A /* CryptocurrencyListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5289B221D5640D00802E5A /* CryptocurrencyListDataManager.swift */; };
 		5C5289BC21D568DA00802E5A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C5289BB21D568DA00802E5A /* Default-568h@2x.png */; };
@@ -141,7 +139,6 @@
 		5C52898621D55C2400802E5A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C52899D21D55ED400802E5A /* UITableView+RegisterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+RegisterCell.swift"; sourceTree = "<group>"; };
 		5C5289A021D55F0200802E5A /* UITableView+ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+ReusableCell.swift"; sourceTree = "<group>"; };
-		5C5289AE21D562C400802E5A /* CryptocurrencyListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CryptocurrencyListViewController.xib; sourceTree = "<group>"; };
 		5C5289B221D5640D00802E5A /* CryptocurrencyListDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptocurrencyListDataManager.swift; sourceTree = "<group>"; };
 		5C5289BB21D568DA00802E5A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5C5289BE21D573EB00802E5A /* LatestCryptocurrenciesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestCryptocurrenciesService.swift; sourceTree = "<group>"; };
@@ -568,7 +565,6 @@
 				5C5289AD21D5625200802E5A /* Assembly */,
 				5C3780BB21DA228D0070225C /* Cells */,
 				5C21074321C06B2000E86C5B /* CryptocurrencyListViewController.swift */,
-				5C5289AE21D562C400802E5A /* CryptocurrencyListViewController.xib */,
 				5C5289B221D5640D00802E5A /* CryptocurrencyListDataManager.swift */,
 				5CFBCB4221DC0B9A0041EEC6 /* CryptocurrencyListViewModelFactory.swift */,
 			);
@@ -799,7 +795,6 @@
 				5C52898821D55C2400802E5A /* Assets.xcassets in Resources */,
 				5C52898E21D55C2400802E5A /* Localizable.strings in Resources */,
 				5C3780C221DA22F20070225C /* CryptocurrencyTableViewCell.xib in Resources */,
-				5C5289B021D562C400802E5A /* CryptocurrencyListViewController.xib in Resources */,
 				5C52898C21D55C2400802E5A /* InfoPlist.strings in Resources */,
 				5C52898A21D55C2400802E5A /* LaunchScreen.storyboard in Resources */,
 				5C5289BD21D568E900802E5A /* Default-568h@2x.png in Resources */,
@@ -813,7 +808,6 @@
 				5C52898721D55C2400802E5A /* Assets.xcassets in Resources */,
 				5C52898D21D55C2400802E5A /* Localizable.strings in Resources */,
 				5C3780C121DA22F20070225C /* CryptocurrencyTableViewCell.xib in Resources */,
-				5C5289AF21D562C400802E5A /* CryptocurrencyListViewController.xib in Resources */,
 				5C52898B21D55C2400802E5A /* InfoPlist.strings in Resources */,
 				5C52898921D55C2400802E5A /* LaunchScreen.storyboard in Resources */,
 				5C5289BC21D568DA00802E5A /* Default-568h@2x.png in Resources */,
@@ -850,11 +844,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Debug/Pods-Debug-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Dip/Dip.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Dip.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -870,11 +866,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Production/Pods-Production-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Dip/Dip.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Dip.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

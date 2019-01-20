@@ -7,72 +7,68 @@
 //
 
 import UIKit
+import SnapKit
 
 final class CryptocurrencyListViewController: UIViewController {
     
-    struct ViewModel {
-        let image: URL
-        let name: String
-        let symbol: String
-        let price: String?
-        let percentChange: String?
-    }
-    
-    private var dataSource: [ViewModel] = [] {
+    private var cryptocurrencies: [CryptocurrencyListViewModel] = [] {
         didSet {
             tableView.reloadData()
         }
     }
     
-    @IBOutlet private weak var tableView: UITableView! {
-        didSet {
-            tableView.tableFooterView = UIView()
-            tableView.register(CryptocurrencyTableViewCell.self)
-            tableView.dataSource = self
-        }
-    }
+    var presenter: ICryptocurrencyListPresenter!
     
-    private let dataManager: ICryptocurrencyListDataManager
-    
-    init(dataManager: ICryptocurrencyListDataManager) {
-        self.dataManager = dataManager
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .plain)
+        tableView.tableFooterView = UIView()
+        tableView.rowHeight = 65
+        tableView.register(CryptocurrencyTableViewCell.self)
+        tableView.dataSource = self
+        return tableView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
-        loadDataSource()
+        presenter.viewDidLoad()
     }
     
     private func setupUI() {
         title = "cryptocurrency_list_title".localized
+        setupTableView()
     }
     
-    private func loadDataSource() {
-        dataManager.loadDataSource { [weak self] dataSource in
-            self?.dataSource = dataSource
+    private func setupTableView() {
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints {
+            $0.edges.equalTo(view.safeAreaLayoutGuide)
         }
     }
 
 }
 
+extension CryptocurrencyListViewController: ICryptocurrencyListView {
+    func update(viewModels: [CryptocurrencyListViewModel]) {
+        cryptocurrencies = viewModels
+    }
+}
+
 extension CryptocurrencyListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
+        return cryptocurrencies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let viewModel = dataSource[indexPath.row]
+        let cryptocurrency = cryptocurrencies[indexPath.row]
         
         let cell: CryptocurrencyTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-        cell.configure(with: viewModel)
-        
+        cell.configure(with: cryptocurrency)
         return cell
     }
+}
+
+class TableViewCommonCell<View: UIView>: UITableViewCell {
+    
 }

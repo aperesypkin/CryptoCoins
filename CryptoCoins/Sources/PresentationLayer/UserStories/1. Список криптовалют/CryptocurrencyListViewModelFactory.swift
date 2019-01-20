@@ -10,10 +10,8 @@ import Foundation
 
 final class CryptocurrencyListViewModelFactory {
     
-    typealias ViewModel = CryptocurrencyListViewController.ViewModel
-    
     func createViewModel(quotes: [String: QuoteModel],
-                         metadata: CryptocurrencyMetadataModel) -> ViewModel {
+                         metadata: CryptocurrencyMetadataModel) -> CryptocurrencyListViewModel {
         let price: String?
         let percentChange: String?
         
@@ -25,11 +23,11 @@ final class CryptocurrencyListViewModelFactory {
             percentChange = nil
         }
         
-        return ViewModel(image: metadata.logo.size(of: .size200) ?? metadata.logo,
-                         name: metadata.name,
-                         symbol: metadata.symbol,
-                         price: price,
-                         percentChange: percentChange)
+        return CryptocurrencyListViewModel(image: metadata.logo.size(of: .size200) ?? metadata.logo,
+                                           name: metadata.name,
+                                           symbol: metadata.symbol,
+                                           price: price,
+                                           percentChange: percentChange)
     }
     
 }

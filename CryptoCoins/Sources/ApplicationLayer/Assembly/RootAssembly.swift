@@ -15,5 +15,6 @@ let rootAssembly = DependencyContainer { container in
         let viewController = try! cryptocurrencyListAssembly.resolve() as CryptocurrencyListViewController
         let navigationController = UINavigationController(rootViewController: viewController)
         window.rootViewController = navigationController
+        window.backgroundColor = .white
     }
 }
